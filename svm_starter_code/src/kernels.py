@@ -16,4 +16,4 @@ def linear(x, y):
 
 def rbf(x, y, gamma=None):
 	# TODO: implement this.
-    return np.exp(-gamma*np.sum((y-x)**2))
+    return np.exp(-gamma*np.dot(y-x,y-x))
