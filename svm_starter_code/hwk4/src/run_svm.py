@@ -14,7 +14,7 @@ __author__ = 'Otilia Stretcu'
 data_folder = '../data/'
 dataset_name = 'camel'                      # Select either 'cluster_easy', 'cluster_harder', 'camel'.
 C = 1
-kernel_func = functools.partial(rbf, gamma=0.001)  # Use this for camel data.
+kernel_func = functools.partial(rbf, gamma=100.0)  # Use this for camel data.
 #kernel_func = linear                                   # Use this for clusters data.
 output_path = '../outputs/'                          # Where to save the plots.
 class_colors = {-1: 'b', 1: 'r'}                     # Colors for plotting.

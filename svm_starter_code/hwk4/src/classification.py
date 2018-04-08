@@ -173,7 +173,6 @@ class SVM:
         # http://fouryears.eu/wp-content/uploads/svm_solutions.pdf
         
         # TODO: implement this.
-        print (support_vector_indices.shape)
         K = self.compute_kernel_matrix(x)
         ei_tot=y-np.dot((alphas*y)[support_vector_indices],K[support_vector_indices,:])
         margin_vector_indices=np.array([i for i in support_vector_indices if self.C-alphas[i]>1E-10])
@@ -185,6 +184,7 @@ class SVM:
             negy_XOR_notSV=np.logical_xor(negy,notSV)
             ei_UB=np.array([ei for x,ei in zip(negy_XOR_SV,ei_tot) if x])
             ei_LB=np.array([ei for x,ei in zip(negy_XOR_notSV,ei_tot) if x])
+        #print (support_vector_indices.shape)
         #print (alphas.shape[0],ei_UB.shape,ei_LB.shape)
             bias = (np.amax(ei_LB)+np.amin(ei_UB))/2.
         else:
